@@ -1,6 +1,7 @@
 .search
     @include flex_align(row, space-around)
     width: 350px
+    height: 50px
 
     #search__input
         width: 90%
@@ -20,17 +21,30 @@
             transform: translateY(-3px)
             opacity: 0
 
-    .search__icon-container
+    .search__icon-container,
+    .clear__icon-container
         width: 20%
         padding: 16px 0
         @include flex_align(row, center)
 
     #search__icon
-        cursor: pointer
         color: $main
         border-radius: 0 10px 10px 0
-        transition-property: background
-        transition: .15s ease-in-out
+
+    #clear__icon
+        width: 15px
+        height: 15px
+        box-sizing: content-box
+        border-radius: 50px
+        padding: 5px
+        cursor: pointer
+        transition-property: color, background, box-shadow
+        transition: .1s ease-in-out
+
+        &:hover
+            color: #fff
+            background: #f94144
+            box-shadow: 2px 2px 5px rgba(#f94144, .25)
 
 .filter__button
     cursor: pointer

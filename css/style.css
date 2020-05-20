@@ -106,7 +106,7 @@ body {
   position: relative;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  background: #fff;
+  background: #fdfffc;
   padding: 25px 25px 0 25px;
   border-radius: 8px;
   -webkit-box-shadow: 5px 5px 10px rgba(94, 100, 114, 0.1);
@@ -363,6 +363,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 350px;
+  height: 50px;
 }
 
 .search #search__input {
@@ -429,7 +430,8 @@ body {
   opacity: 0;
 }
 
-.search .search__icon-container {
+.search .search__icon-container,
+.search .clear__icon-container {
   width: 20%;
   padding: 16px 0;
   display: -webkit-box;
@@ -448,13 +450,31 @@ body {
 }
 
 .search #search__icon {
-  cursor: pointer;
   color: #3d405b;
   border-radius: 0 10px 10px 0;
-  -webkit-transition-property: background;
-  transition-property: background;
-  -webkit-transition: .15s ease-in-out;
-  transition: .15s ease-in-out;
+}
+
+.search #clear__icon {
+  width: 15px;
+  height: 15px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-transition-property: color, background, -webkit-box-shadow;
+  transition-property: color, background, -webkit-box-shadow;
+  transition-property: color, background, box-shadow;
+  transition-property: color, background, box-shadow, -webkit-box-shadow;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.search #clear__icon:hover {
+  color: #fff;
+  background: #f94144;
+  -webkit-box-shadow: 2px 2px 5px rgba(249, 65, 68, 0.25);
+          box-shadow: 2px 2px 5px rgba(249, 65, 68, 0.25);
 }
 
 .filter__button {

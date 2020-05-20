@@ -6,8 +6,9 @@ const filterCountries = async ({
     URL
 }) => {
     // if input is empty
-    if (!name)
+    if (!name) {
         return fetchAll(URL);
+    }
 
     return fetch(`${URL}${topic}/${name}`).then(res => res.json());
 }
