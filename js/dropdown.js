@@ -7,6 +7,8 @@ const dropdown = () => {
     $('.dropdown__container').find('.dropdown').click(function () {
         $(this).toggleClass('dropdown__border');
         $(this).find('ul').toggleClass('dropdown__active');
+
+        $('.dropdown__icon').toggleClass('rotate__icon');
     });
 
     // change dropdown text
