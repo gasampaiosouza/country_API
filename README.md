@@ -1,6 +1,7 @@
 # Country information API
 
 I made an application that gives you some information about all the world's countries.
+> i used [rest countries API](http://restcountries.eu/), if you also want to!
 
 ### It looks like this!
 
@@ -30,6 +31,6 @@ I made an application that gives you some information about all the world's coun
 * SASS
 * Javascript (only 1 file with Jquery, i tried to use vanilla the most)
 
-> coded with: VS Code.
+> Coded with: VS Code.
 
 Thank you 👋
