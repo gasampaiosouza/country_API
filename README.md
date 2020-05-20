@@ -1,2 +1,3 @@
-# country_API
-Some countries information using an API
+# Country information API
+
+There's no description yet :(
