@@ -13,7 +13,7 @@ const dropdown = () => {
     $('.dropdown__container').find('ul > li').click(function () {
         $(this).parents('.dropdown').children('p').html($(this).text());
 
-        regionFilter($(this).text());
+        regionFilter($(this).text().toLowerCase().trim());
     });
 
 };

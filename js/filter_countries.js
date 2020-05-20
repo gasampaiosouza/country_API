@@ -9,8 +9,7 @@ const filterCountries = async ({
     if (!name)
         return fetchAll(URL);
 
-    return fetch(`${URL}${topic}/${name}`)
-        .then(res => res.json());
+    return fetch(`${URL}${topic}/${name}`).then(res => res.json());
 }
 
 export default filterCountries;

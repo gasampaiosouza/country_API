@@ -4,12 +4,14 @@ import configureContent from './configure_content.js';
 
 const URL = 'https://restcountries.eu/rest/v2/';
 
-const regionFilter = filter => {
-    filterCountries({
-        name: filter.toLowerCase().trim(),
+const regionFilter = async filter => {
+    const countries = await filterCountries({
+        name: filter == 'no region' ? undefined : filter,
         topic: 'region',
         URL
-    }).then(users => configureContent(users, filter));
+    });
+
+    configureContent(countries, filter, true);
 }
 
 export default regionFilter;

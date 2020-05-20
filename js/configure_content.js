@@ -1,14 +1,22 @@
 'use strict';
 import content from './content.js';
+import emptyMessage from './empty_message.js';
+import toggleElement from './toggle_element.js';
 
+const $message_element = document.getElementById('empty__message');
 const $flagsContainer = document.getElementById('flags__container');
 
-const configureContent = (data, search, dataArray = []) => {
+const configureContent = (data, search, region = false, dataArray = []) => {
+
+    // API's data.message is always == 'not found'
+    if (data.message)
+        return emptyMessage($flagsContainer, $message_element);
+
     let resultArr = [];
 
     data.map(item => dataArray.push(item));
 
-    if (search) {
+    if (search && !region) {
         // filter to match exactly with the country(ies) user is searching
         resultArr = dataArray.filter(({
             name
@@ -16,6 +24,10 @@ const configureContent = (data, search, dataArray = []) => {
     } else
         // do not filter anything
         resultArr = dataArray;
+
+    // if after the filter, it's empty
+    if (resultArr.length == 0)
+        return emptyMessage($flagsContainer, $message_element);
 
     const result = resultArr.reduce((prev, {
         flag,
@@ -27,6 +39,9 @@ const configureContent = (data, search, dataArray = []) => {
 
         return prev;
     }, '');
+
+    toggleElement($message_element, 'opacity', 0);
+    console.log('cheguei aqui em baixo');
 
     return displayData(result, $flagsContainer);
 }
