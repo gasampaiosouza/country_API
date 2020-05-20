@@ -1,0 +1,83 @@
+.dropdown__container
+    width: 300px
+    height: 50px
+    z-index: 2
+
+    .dropdown,
+    .dropdown__options
+        @include flex_align(row, space-between)
+        @extend .input
+        color: $main
+        background: #fff
+        width: 100%
+        cursor: pointer
+
+    .dropdown
+        position: relative
+        padding: 0 20px
+        border-radius: 5px
+        height: inherit
+
+        transition-property: box-shadow, border-radius
+        transition: .2s ease-in-out
+
+        &:hover 
+            box-shadow: 5px 5px 15px rgba($color: $shadow, $alpha: .25)
+        
+
+        .dropdown__text
+            // for mobile
+            padding-right: 5px
+            color: rgba($shadow, .85)
+        
+
+        .dropdown__icon
+            font-size: 20px
+        
+    
+
+    .dropdown__options
+        pointer-events: none
+
+        width: calc(100%)
+        position: absolute
+        top: 50px
+        left: 0
+
+        transform: translateY(5%)
+        opacity: 0
+
+        @include flex_align(column)
+
+        border-radius: 0 0 10px 10px
+        transition-property: opacity, transform
+        transition: .3s ease-in-out
+
+        li 
+            color: rgba($shadow, .75)
+            width: 100%
+            list-style: none
+            padding: 12.5px 20px
+            transition-property: background-color, color
+            transition: .1s ease-in-out
+            line-height: 25px
+
+            &:hover 
+                background-color: #f2f2f2
+                color: $main
+            
+
+            &:nth-last-child(1)
+                border-radius: 0 0 5px 5px
+
+// active classes
+
+.dropdown__active
+	transform: none !important
+	opacity: 1 !important
+	pointer-events: all !important
+
+.dropdown__border
+	border-radius: 5px 5px 0 0 !important
+
+//
