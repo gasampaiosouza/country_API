@@ -1,0 +1,65 @@
+@import animation
+
+
+.country__box
+    background: #fff
+    padding: 25px
+    border-radius: 8px
+    box-shadow: 5px 5px 10px rgba($shadow, .1)
+    margin: 20px 10px
+
+    height: 300px
+    width: 300px
+
+    user-select: none
+    transition-property: transform, box-shadow
+    transition: .2s ease-in-out
+
+    // animation: show .2s ease-in-out
+    @include addAnimation(&, show, 193)
+
+    &:hover
+        transform: translateY(-10px)
+        box-shadow: 8px 8px 15px rgba($shadow, .2)
+
+    .country__flag
+        @include flex_align(row, center)
+
+        img
+            width: 250px
+            height: 150px
+            border-radius: 2px
+
+    .country__tag-name
+        @include flex_align(row, space-between)
+        margin: 15px 0
+
+        .country__tag
+            background: $main
+            border-radius: 5px
+            padding: 5px 15px
+            font-size: .8rem
+            color: #fff
+            font-weight: bold
+            letter-spacing: 1px
+
+            box-shadow: 3px 3px 10px rgba($shadow, .25)
+
+        .country__title
+            margin-top: 15px
+            max-width: 300px
+            font-size: 1.15rem
+
+    
+    .country__region
+        @include flex_align(row, space-between)
+        margin-top: 25px
+
+        .region
+            color: $main
+            font-weight: bold
+
+        .sub-region
+            width: 75%
+            text-align: right
+            line-height: 25px

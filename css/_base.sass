@@ -1,0 +1,26 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-family: Fira Sans
+    background: #f2f2f2
+    color: rgba(#212121, .85)
+
+@mixin flex_align($direction, $justify: center)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justify
+    align-items: center
+
+@mixin addAnimation($element_name, $animation_name, $elements_number)
+    $counter: 0
+    @for $i from 1 through $elements_number
+        &:nth-child(#{$i})
+            animation: $animation_name #{0.5 + $counter}s ease-in-out
+
+        @if $i == 4
+            $counter: 0
+
+        $counter: $counter + 0.15
