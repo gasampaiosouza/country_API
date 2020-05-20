@@ -2,8 +2,10 @@
 
 
 .country__box
+    position: relative
+    box-sizing: content-box
     background: #fff
-    padding: 25px
+    padding: 25px 25px 0 25px
     border-radius: 8px
     box-shadow: 5px 5px 10px rgba($shadow, .1)
     margin: 20px 10px
@@ -15,8 +17,8 @@
     transition-property: transform, box-shadow
     transition: .2s ease-in-out
 
-    // animation: show .2s ease-in-out
-    @include addAnimation(&, show, 193)
+    // i'm gonna animate just 25/193 of the boxes
+    @include addAnimation(&, show, 25)
 
     &:hover
         transform: translateY(-5px)
@@ -52,14 +54,22 @@
 
     
     .country__region
+        width: 100%
+        padding: 0 25px
+
+        position: absolute
+        bottom: 25px
+        left: 50%
+        transform: translate(-50%)
+
         @include flex_align(row, space-between)
-        margin-top: 25px
+        margin-top: 15px
 
         .region
             color: $main
             font-weight: bold
 
         .sub-region
-            width: 75%
+            // width: 75%
             text-align: right
             line-height: 25px

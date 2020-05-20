@@ -1,3 +1,6 @@
+'use strict';
+import regionFilter from './region_filter.js'
+
 const dropdown = () => {
 
     // make dropdown work
@@ -10,9 +13,9 @@ const dropdown = () => {
     $('.dropdown__container').find('ul > li').click(function () {
         $(this).parents('.dropdown').children('p').html($(this).text());
 
-        check('.dropdown p');
+        regionFilter($(this).text());
     });
 
 };
 
-export default dropdown;
+export default dropdown();

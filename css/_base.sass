@@ -18,9 +18,9 @@ body
     $counter: 0
     @for $i from 1 through $elements_number
         &:nth-child(#{$i})
-            animation: $animation_name #{0.5 + $counter}s ease-in-out
+            animation: $animation_name #{0.35 + $counter}s ease-in-out
 
-        @if $i == 4
+        @if $i == 3
             $counter: 0
 
         $counter: $counter + 0.15
