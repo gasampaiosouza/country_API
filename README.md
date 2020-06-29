@@ -20,10 +20,8 @@ I made an application that gives you some information about all the world's coun
 
 - [x] search by country
 - [x] search by region
-- [x] clear input icon
-- [ ] more country information on click
-- [ ] increase application's performance
-- [ ] make it's programming a bit more functional
+- [x] increase application's performance
+- [x] make it's programming a bit more functional
 
 ### Made with
 

@@ -1,23 +1,25 @@
 'use strict';
-import regionFilter from './region_filter.js'
+import regionFilter from './region_filter.js';
 
 const dropdown = () => {
+  // make dropdown work
+  $('.dropdown__container')
+    .find('.dropdown')
+    .click(function () {
+      $(this).toggleClass('dropdown__border');
+      $(this).find('ul').toggleClass('dropdown__active');
 
-    // make dropdown work
-    $('.dropdown__container').find('.dropdown').click(function () {
-        $(this).toggleClass('dropdown__border');
-        $(this).find('ul').toggleClass('dropdown__active');
-
-        $('.dropdown__icon').toggleClass('rotate__icon');
+      $('.dropdown__icon').toggleClass('rotate__icon');
     });
 
-    // change dropdown text
-    $('.dropdown__container').find('ul > li').click(function () {
-        $(this).parents('.dropdown').children('p').html($(this).text());
+  // change dropdown text
+  $('.dropdown__container')
+    .find('ul > li')
+    .click(function () {
+      $(this).parents('.dropdown').children('p').html($(this).text());
 
-        regionFilter($(this).text().toLowerCase().trim());
+      regionFilter($(this).text().toLowerCase().trim());
     });
-
 };
 
 export default dropdown();
