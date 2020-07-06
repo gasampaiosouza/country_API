@@ -27,7 +27,7 @@ I made an application that gives you some information about all the world's coun
 
 * HTML
 * SASS
-* Javascript (only 1 file with Jquery, i tried to use vanilla the most)
+* Javascript
 
 > Coded with: VS Code.
 
